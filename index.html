@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Clicker</title>
+  <style>
+    body{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  text-align: center;
+
+  
+}
+
+h1{
+    color: white;
+}
+
+.coin{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 80px;
+  transform: translateY(50px);
+  user-select: none; /* Disable text selection */
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>$0</h1>
+    <div class="coin">$</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let coins = 0;
+      const coinDiv = document.querySelector('.coin');
+      const h1 = document.querySelector('h1');
+
+      coinDiv.addEventListener('click', () => {
+        coins += 1;
+        h1.textContent = `$${coins/1000}`;
+      });
+    });
+  </script>
+</body>
+</html>
